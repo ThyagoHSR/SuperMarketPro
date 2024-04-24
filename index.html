@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperMarket Pro</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&display=swap">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <meta name="description" content="Aplicativo Web PWA para gerenciamento de compras de supermercado.">
+</head>
+<body>
+    <main class="section">
+        <div class="container">
+            <h1>SuperMarket Pro</h1>
+            <div class="budget">
+              <label for="budget">Orçamento Total:</label>
+              <input type="number" id="budget" placeholder="Insira o valor disponível" min="0" max="99999999">
+              <button id="update-budget">Atualizar</button>
+            </div>
+            <div class="items">
+                <h2>Itens na Lista:</h2>
+                <ul id="item-list">
+        
+                </ul>
+                <p class="title-total">Total: R$<span id="total">0</span></p>
+            </div>
+            <div class="add-item">
+                <input type="text" id="item-name" placeholder="Nome do Item">
+                <input type="number" id="item-quantity" placeholder="Quantidade" min="0" max="20">
+                <input type="number" id="item-price" placeholder="Preço do Item" min="0" max="1000">
+                <button id="add-item">Adicionar</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <script src="./javascript/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // This is the service worker with the Cache-first network
+        // Add this below content to your HTML page, or add the js file to your page at the very top to 
+        //register service worker
+        // Check compatibility for the browser we're running this in
+        if ("serviceWorker" in navigator) {
+         if (navigator.serviceWorker.controller) {
+         console.log("[PWA Builder] active service worker found, no need to register");
+         } else {
+         // Register the service worker
+         navigator.serviceWorker
+         .register("pwabuilder-sw.js", {
+         scope: "./"
+         })
+         .then(function (reg) {
+         console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+         });
+         }
+        }
+        </script>
+
+</body>
+</html>
