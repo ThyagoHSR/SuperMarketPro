@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.super_market_pro.twa",
+        "sha256_cert_fingerprints": ["B3:11:F8:F3:68:52:58:66:37:DF:31:40:E0:CA:1E:EF:DB:9E:AA:96:7E:D3:7D:3D:35:AE:E3:A2:D8:03:40:71"]
+      }
+    }]
