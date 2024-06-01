@@ -7,7 +7,8 @@ body {
     padding: 0;
     background-position: center;
     background-size: cover;
-    background: linear-gradient(rgba(0, 0,1), rgba(0, 0, 1,0.1)), url('https://theacsi.org/wp-content/uploads/2022/01/acsi-supermarket-industry-scaled.jpg');
+    background: linear-gradient(rgba(0, 0,1), rgba(0, 0, 1,0.1)),
+                url('https://theacsi.org/wp-content/uploads/2022/01/acsi-supermarket-industry-scaled.jpg');
 }
 
 .section {
@@ -27,11 +28,10 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow with increased vertical offset and blur */
 }
-
 h1, h2 {
     font-family: 'Bangers', cursive;
     font-size: 3rem !important;
@@ -177,4 +177,20 @@ button:disabled:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.footer p, .footer a{
+    font-family: 'Bangers', cursive;
+    font-size: 1.5rem !important;
+    text-shadow: 8px 8px 8px rgba(0, 0, 0,  10);
+    color: white;
+    text-align: center;
+}
+.footer a:hover{
+    color: #45a049;
 }
